@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Profile - LinkedIn</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f3f2ef;
+            color: #000000e6;
+        }
+
+        header {
+            background-color: #fff;
+            border-bottom: 1px solid #d4d4d4;
+            padding: 8px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1128px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 32px;
+            color: #0a66c2;
+            font-weight: bold;
+        }
+
+        .search-bar {
+            flex: 1;
+            max-width: 280px;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #d4d4d4;
+            border-radius: 4px;
+            background-color: #eef3f8;
+        }
+
+        .container {
+            max-width: 1128px;
+            margin: 24px auto;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        .card {
+            background-color: #fff;
+            border: 1px solid #d4d4d4;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .profile-header {
+            position: relative;
+        }
+
+        .cover-photo {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .profile-info {
+            padding: 24px 24px 16px;
+            position: relative;
+        }
+
+        .avatar {
+            width: 152px;
+            height: 152px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            background-color: #ddd;
+            position: absolute;
+            top: -76px;
+            left: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: bold;
+            color: #666;
+        }
+
+        .profile-details {
+            margin-left: 0;
+            padding-top: 80px;
+        }
+
+        .name {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .headline {
+            font-size: 16px;
+            color: #000000e6;
+            margin-top: 4px;
+        }
+
+        .location {
+            font-size: 14px;
+            color: #00000099;
+            margin-top: 8px;
+        }
+
+        .connections {
+            font-size: 14px;
+            color: #0a66c2;
+            margin-top: 8px;
+            font-weight: 600;
+        }
+
+        .profile-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 8px 24px;
+            border-radius: 24px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background-color: #0a66c2;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: #004182;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #0a66c2;
+            border: 1px solid #0a66c2;
+        }
+
+        .btn-secondary:hover {
+            background-color: #eef3f8;
+        }
+
+        .section {
+            padding: 24px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .about-text {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #000000e6;
+        }
+
+        .experience-item, .education-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .experience-item:last-child, .education-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .company-logo, .school-logo {
+            width: 48px;
+            height: 48px;
+            background-color: #ddd;
+            border-radius: 4px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #666;
+        }
+
+        .experience-details, .education-details {
+            flex: 1;
+        }
+
+        .job-title, .degree {
+            font-size: 16px;
+            font-weight: 600;
+            color: #000000e6;
+        }
+
+        .company-name, .school-name {
+            font-size: 14px;
+            color: #00000099;
+            margin-top: 2px;
+        }
+
+        .duration {
+            font-size: 14px;
+            color: #00000099;
+            margin-top: 4px;
+        }
+
+        .job-description {
+            font-size: 14px;
+            color: #000000e6;
+            margin-top: 8px;
+            line-height: 1.5;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            padding: 8px 16px;
+            background-color: #f3f2ef;
+            border-radius: 16px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #000000e6;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e8e8e8;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">in</div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="card profile-header">
+            <div class="cover-photo"></div>
+            <div class="profile-info">
+                <div class="avatar">JD</div>
+                <div class="profile-details">
+                    <h1 class="name">Jane Doe</h1>
+                    <p class="headline">Senior Software Engineer | Full Stack Developer | Tech Enthusiast</p>
+                    <p class="location">San Francisco Bay Area, United States</p>
+                    <p class="connections">500+ connections</p>
+                    <div class="profile-actions">
+                        <button class="btn btn-primary">Open to</button>
+                        <button class="btn btn-secondary">Add profile section</button>
+                        <button class="btn btn-secondary">More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="section">
+                <h2 class="section-title">About</h2>
+                <p class="about-text">
+                    Passionate software engineer with 8+ years of experience building scalable web applications and leading development teams. Specialized in full-stack development with expertise in modern JavaScript frameworks, cloud architecture, and agile methodologies.
+                    <br><br>
+                    I thrive on solving complex technical challenges and mentoring junior developers. Always eager to learn new technologies and contribute to innovative projects that make a positive impact.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="section">
+                <h2 class="section-title">Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="company-logo">TC</div>
+                    <div class="experience-details">
+                        <div class="job-title">Senior Software Engineer</div>
+                        <div class="company-name">Tech Company Inc.</div>
+                        <div class="duration">Jan 2021 - Present · 3 yrs 10 mos</div>
+                        <div class="job-description">
+                            Leading a team of 5 engineers in developing a cloud-based SaaS platform. Architected and implemented microservices architecture, resulting in 40% improvement in system performance. Mentored junior developers and established best practices for code quality and testing.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="company-logo">DS</div>
+                    <div class="experience-details">
+                        <div class="job-title">Software Engineer</div>
+                        <div class="company-name">Digital Solutions LLC</div>
+                        <div class="duration">Mar 2018 - Dec 2020 · 2 yrs 10 mos</div>
+                        <div class="job-description">
+                            Developed and maintained multiple client-facing web applications using React and Node.js. Collaborated with cross-functional teams to deliver projects on time and within budget. Implemented CI/CD pipelines that reduced deployment time by 60%.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="company-logo">ST</div>
+                    <div class="experience-details">
+                        <div class="job-title">Junior Developer</div>
+                        <div class="company-name">StartUp Tech</div>
+                        <div class="duration">Jun 2016 - Feb 2018 · 1 yr 9 mos</div>
+                        <div class="job-description">
+                            Contributed to front-end development of mobile-first web applications. Worked closely with designers to implement responsive UI components. Participated in agile development processes and daily standups.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="section">
+                <h2 class="section-title">Education</h2>
+                
+                <div class="education-item">
+                    <div class="school-logo">SU</div>
+                    <div class="education-details">
+                        <div class="degree">Bachelor of Science - BS, Computer Science</div>
+                        <div class="school-name">State University</div>
+                        <div class="duration">2012 - 2016</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="section">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-list">
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">AWS</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">MongoDB</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">Agile Methodologies</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

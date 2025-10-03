@@ -1,0 +1,58 @@
+1. modify code such that it uses a profile image named 'profile.jpg' located in the same directory as the html file. 
+
+2. The name of the person should be 'Beiho (ex populo) Tigris'
+
+3. His job should be 'Ritual Specialist | Commodity Broker | Crisis Management Consultant | Marriage Matchmaker | Acknowledged member of the leading party of Tigris | Entertainer | 
+
+4. The location should be 'Tigray Region, Ethiopia'
+
+5. He should have '17+ direct connections'
+5.5 He should have 'currently married'
+
+6. 'About' should contain this information instead :
+Accomplished HR Leader with life-long experience leading people in one's journey towards prosperity. Specialized in solving seemingly impossible problems through indirect and uncharted approaches with expertise in risk control and agile methodologies.
+
+My primary objective, regardless of any profession, is endlessly pursuing prosperity and redefining it to propel myself to go beyond my so-thought limiations. I naturally outplay my competitors without them even noticing until its too late, and for that very reason I was honorably acknowledged and accepeted as a formal member of the leading party. As of now, I stand firmly as a candidate for the next CEO(when clicked, should pop up saying 'Chief Executor of Oligarchy).
+
+7. Experience should be the following instead:
+a. Ritual Specialist, healer
+Village in Tigre, Ethiopia
+Demonstrated a successful resurrection ritual for a small audience of relatives. 
+Provided a strong foundation to eventually mastering the skills in convincing.
+
+b. Commodity Broker
+Multiple occasions
+Redefined "prcious commodity" by exploring beyond borders. Collaborated with foreign traders to deliver insurmountable returns.
+
+c. Crisis Management Consultant
+Ongoing
+A self-renowned pacifist, who survived multiple aggravated assaults by use of wise words and fair trades. Successfully outsourced risks of clients as well, which prevented numerous irreversible damage to the firm.
+
+d. Marriage Matchmaker & Acknowledged Party Member
+Leading party of Tigris, Project Leader
+Brokered marriage between the families in charge of the villages, which led to being acknowledged by the committee and being offered a seat as a member of the family.
+
+e. Entertainer
+Life
+Brought prosperity and entertainment to every encounter. Redefined order and the side who laughs.
+
+8. Education
+Masters in Trickery - MS, Risk management and Human Relations (Honors)
+Masters Self-awarded, honored by party
+lifelong
+
+9. Skills
+Persuasion
+Agile methodologies
+Leadership
+High-stakes trade
+AWS (when clicked and opened, should pop up a page (without actually changing the webpage) with message 'Allegorically Welding Spirit - Outsourced risks invoked historical wars')
+Git (when clicked and opened, should pop up a page (without actually changing the webpage) with message `Gallagher, Instigator, Transformer`)
+Trickery (when clicked, show 'Deception')
+
+
+
+
+
+
+

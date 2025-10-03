@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Profile - LinkedIn</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f3f2ef;
+            color: #000000e6;
+        }
+
+        header {
+            background-color: #fff;
+            border-bottom: 1px solid #d4d4d4;
+            padding: 8px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1128px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 32px;
+            color: #0a66c2;
+            font-weight: bold;
+        }
+
+        .search-bar {
+            flex: 1;
+            max-width: 280px;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #d4d4d4;
+            border-radius: 4px;
+            background-color: #eef3f8;
+        }
+
+        .container {
+            max-width: 1128px;
+            margin: 24px auto;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        .card {
+            background-color: #fff;
+            border: 1px solid #d4d4d4;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .profile-header {
+            position: relative;
+        }
+
+        .cover-photo {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .profile-info {
+            padding: 24px 24px 16px;
+            position: relative;
+        }
+
+        .avatar {
+            width: 152px;
+            height: 152px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            background-color: #ddd;
+            position: absolute;
+            top: -76px;
+            left: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: bold;
+            color: #666;
+        }
+
+        .profile-details {
+            margin-left: 0;
+            padding-top: 80px;
+        }
+
+        .name {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .headline {
+            font-size: 16px;
+            color: #000000e6;
+            margin-top: 4px;
+        }
+
+        .location {
+            font-size: 14px;
+            color: #00000099;
+            margin-top: 8px;
+        }
+
+        .connections {
+            font-size: 14px;
+            color: #0a66c2;
+            margin-top: 8px;
+            font-weight: 600;
+        }
+
+        .profile-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 8px 24px;
+            border-radius: 24px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background-color: #0a66c2;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: #004182;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #0a66c2;
+            border: 1px solid #0a66c2;
+        }
+
+        .btn-secondary:hover {
+            background-color: #eef3f8;
+        }
+
+        .section {
+            padding: 24px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .about-text {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #000000e6;
+        }
+
+        .experience-item, .education-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .experience-item:last-child, .education-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .company-logo, .school-logo {
+            width: 48px;
+            height: 48px;
+            background-color: #ddd;
+            border-radius: 4px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #666;
+        }
+
+        .experience-details, .education-details {
+            flex: 1;
+        }
+
+        .job-title, .degree {
+            font-size: 16px;
+            font-weight: 600;
+            color: #000000e6;
+        }
+
+        .company-name, .school-name {
+            font-size: 14px;
+            color: #00000099;
+            margin-top: 2px;
+        }
+
+        .duration {
+            font-size: 14px;
+            color: #00000099;
+            margin-top: 4px;
+        }
+
+        .job-description {
+            font-size: 14px;
+            color: #000000e6;
+            margin-top: 8px;
+            line-height: 1.5;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            padding: 8px 16px;
+            background-color: #f3f2ef;
+            border-radius: 16px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #000000e6;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e8e8e8;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">in</div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="card profile-header">
+            <div class="cover-photo"></div>
+            <div class="profile-info">
+                <div class="avatar">
+                    <img src="profile.jpg" alt="Profile" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+                </div>
+                <div class="profile-details">
+                    <h1 class="name">Beiho (ex populo) Tigris</h1>
+                    <p class="headline">Acknowledged member of the leading party of Tigris </p>
+                    <p class="headline">Ritual Specialist | Commodity Broker | Marriage Matchmaker | Crisis Management Consultant | Entertainer</p>
+                    <p class="location">Tigray Region, Ethiopia</p>
+                    <p class="connections">15+ direct connections · Currently married</p>
+                    <div class="profile-actions">
+                        <button class="btn btn-primary">Open to</button>
+                        <button class="btn btn-secondary">Add profile section</button>
+                        <button class="btn btn-secondary">More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="section">
+                <h2 class="section-title">About</h2>
+                <p class="about-text">
+                    Accomplished HR Leader with life-long experience leading people in one's journey towards prosperity. Specialized in solving seemingly impossible problems through indirect and uncharted approaches with expertise in risk control and agile methodologies.
+                    <br><br>
+                    My primary objective, regardless of any profession, is endlessly pursuing prosperity and redefining it to propel myself to go beyond my so-thought limitations. I naturally outplay my competitors without them even noticing until it's too late, and for that very reason I was honorably acknowledged and accepted as a formal member of the leading party. As of now, I stand firmly as a candidate for the next <span style="cursor: pointer; color: #0a66c2; text-decoration: underline;" onclick="alert('Chief Executor of Oligarchy')">CEO</span>.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="section">
+                <h2 class="section-title">Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="company-logo">RS</div>
+                    <div class="experience-details">
+                        <div class="job-title">Ritual Specialist, healer</div>
+                        <div class="company-name">Village in Tigre, Ethiopia</div>
+                        <div class="duration">Early Career</div>
+                        <div class="job-description">
+                            Demonstrated a successful resurrection ritual for a small audience of relatives. Provided a strong foundation to eventually mastering the skills in convincing.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="company-logo">CB</div>
+                    <div class="experience-details">
+                        <div class="job-title">Commodity Broker</div>
+                        <div class="company-name">Multiple occasions</div>
+                        <div class="duration">Ongoing</div>
+                        <div class="job-description">
+                            Redefined "precious commodity" by exploring beyond borders. Collaborated with foreign traders to deliver insurmountable returns.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="company-logo">CM</div>
+                    <div class="experience-details">
+                        <div class="job-title">Crisis Management Consultant</div>
+                        <div class="company-name">Ongoing</div>
+                        <div class="duration">Present</div>
+                        <div class="job-description">
+                            A self-renowned pacifist, who survived multiple aggravated assaults by use of wise words and fair trades. Successfully outsourced risks of clients as well, which prevented numerous irreversible damage to the firm.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="company-logo">MM</div>
+                    <div class="experience-details">
+                        <div class="job-title">Marriage Matchmaker & Acknowledged Party Member</div>
+                        <div class="company-name">Leading party of Tigris, Project Leader</div>
+                        <div class="duration">Career Milestone</div>
+                        <div class="job-description">
+                            Brokered marriage between the families in charge of the villages, which led to being acknowledged by the committee and being offered a seat as a member of the family.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="company-logo">🎭</div>
+                    <div class="experience-details">
+                        <div class="job-title">Entertainer</div>
+                        <div class="company-name">Life</div>
+                        <div class="duration">Lifelong</div>
+                        <div class="job-description">
+                            Brought prosperity and entertainment to every encounter. Redefined order and the side who laughs.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="section">
+                <h2 class="section-title">Education</h2>
+                
+                <div class="education-item">
+                    <div class="school-logo">🎓</div>
+                    <div class="education-details">
+                        <div class="degree">Masters in Trickery - MS, Risk management and Human Relations (Honors)</div>
+                        <div class="school-name">Masters Self-awarded, honored by party</div>
+                        <div class="duration">Lifelong</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="section">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-list">
+                    <span class="skill-tag">Persuasion</span>
+                    <span class="skill-tag">Agile methodologies</span>
+                    <span class="skill-tag">Leadership</span>
+                    <span class="skill-tag">High-stakes trade</span>
+                    <span class="skill-tag" style="cursor: pointer;" onclick="alert('Allegorically Welding Spirit - Outsourced risks invoked historical wars')">AWS</span>
+                    <span class="skill-tag" style="cursor: pointer;" onclick="alert('Gallagher, Instigator, Transformer')">Git</span>
+                    <span class="skill-tag" style="cursor: pointer;" onclick="alert('Deception')">Trickery</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
